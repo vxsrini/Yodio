@@ -1,0 +1,25 @@
+page-edit-stations {
+
+   .avatar {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        padding-top: 8px;
+        background: darkgreen;
+        border: 0px solid darkgreen;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font: 14px Arial, sans-serif;
+    }
+
+    .col {
+        display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
+        border : 0px solid lightblue;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

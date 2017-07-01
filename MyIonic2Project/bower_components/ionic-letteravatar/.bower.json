@@ -1,0 +1,27 @@
+{
+  "name": "ionic-letteravatar",
+  "main": "./ionic-letteravatar.js",
+  "keywords": [
+    "angular",
+    "ngletteravatar",
+    "letter avatar",
+    "gmail like letter icon",
+    "letter image",
+    "ionic-letteravatar",
+    "ionic letter avatar"
+  ],
+  "dependencies": {
+    "angular": "*"
+  },
+  "homepage": "https://github.com/uttesh/ionic-letteravatar",
+  "_release": "ba7d881cbe",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ba7d881cbe566874e9ab55fc9002f1613386a57d"
+  },
+  "_source": "https://github.com/uttesh/ionic-letteravatar.git",
+  "_target": "*",
+  "_originalSource": "ionic-letter-avatar",
+  "_direct": true
+}

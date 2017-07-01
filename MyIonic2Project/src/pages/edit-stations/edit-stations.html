@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title text-center>YADIO - Add Station</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="viewMode == 'Show'">
+    <ion-list>
+      <ion-item-sliding *ngFor="let stat of stationArray">
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col justify-content-center>
+                <div class="avatar">{{stat.language | slice:0:2 | uppercase}}</div>
+              </ion-col>
+              <ion-col justify-content-start><b>{{stat.language}}</b></ion-col>
+              <ion-col justify-content-start><b>{{stat.name}}</b></ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+        <ion-item-options>
+          <button ion-button icon-only (click)="editStation(stat)" clear>
+                    <ion-icon name="create"></ion-icon>
+                </button>
+          <button ion-button icon-only (click)="deleteStation(stat)" clear>
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  
+  <ion-fab bottom right *ngIf="viewMode == 'Show'">
+    <button ion-fab (click)="addFabClicked()">
+          <ion-icon name="add"></ion-icon>
+      </button>
+  </ion-fab>
+
+  <ion-fab bottom left *ngIf="viewMode == 'Show'">
+    <button ion-fab (click)="refresh()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+  </ion-fab>
+
+
+  <div *ngIf="viewMode == 'Edit'">
+    <form (ngSubmit)="addStation()">
+      <ion-item>
+        <ion-label>Station Name</ion-label>
+        <ion-input type="text" [(ngModel)]="station.name" name="st_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Language</ion-label>
+        <ion-select [(ngModel)]="station.language" name="st_lang">
+          <ion-option *ngFor="let lang of languages" [value]="lang.language">{{lang.language}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>URL</ion-label>
+        <ion-input type="text" [(ngModel)]="station.url" name="url"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Add / Update Station</button>
+    </form>
+  </div>
+</ion-content>
